@@ -14,8 +14,10 @@ player1 = gets.chomp
 puts 'Enter your name Player 2: '.colorize(:green)
 player2 = gets.chomp
 
-# While game end
 
+gameOn = true
+# While game end
+while gameOn
 board = %w[1 2 3 4 5 6 7 8 9]
 
 def return_board(board)
@@ -49,5 +51,7 @@ return_board(board)
 # show the board with selection
 winner = player1
 # end
+gameOn = false
+end
 
 puts "🎉 #{winner} wins the game 🎉".colorize(:green)
