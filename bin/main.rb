@@ -41,13 +41,13 @@ while game_on
   # show the board without selection
   return_board(board)
   input2 = gets.chomp
-  if  board[input2.to_i - 1] == 'X'
+  if board[input2.to_i - 1] == 'X'
     print 'Sorry this move is not valid, '
     p 'please select another place'
   else
-  board[input2.to_i - 1] = '0'
-  puts "#{player2} has selected the #{input2} position".colorize(:green)
-  return_board(board)
+    board[input2.to_i - 1] = '0'
+    puts "#{player2} has selected the #{input2} position".colorize(:green)
+    return_board(board)
   end
 
   # show the board with selection
