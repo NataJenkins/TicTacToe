@@ -14,9 +14,9 @@ player1 = gets.chomp
 puts 'Enter your name Player 2: '.colorize(:green)
 player2 = gets.chomp
 
-game_on = true
+turns = 9
 # While game end
-while game_on
+while turns.positive?
   board = %w[1 2 3 4 5 6 7 8 9]
 
   def return_board(board)
@@ -35,6 +35,7 @@ while game_on
   board[input1.to_i - 1] = 'X'
   puts "#{player1} has selected the #{input1} position".colorize(:green)
   return_board(board)
+  turns -= 1
   # show the board with selection
 
   puts "#{player2} pick a number from 1 to 9: ".colorize(:green)
@@ -48,12 +49,12 @@ while game_on
     board[input2.to_i - 1] = '0'
     puts "#{player2} has selected the #{input2} position".colorize(:green)
     return_board(board)
+    turns -= 1
   end
 
   # show the board with selection
   winner = player1
   # end
-  game_on = false
 end
 
 puts "🎉 #{winner} wins the game 🎉".colorize(:green)
