@@ -14,10 +14,12 @@ player1 = gets.chomp
 puts 'Enter your name Player 2: '.colorize(:green)
 player2 = gets.chomp
 
-turns = 9
+board = %w[1 2 3 4 5 6 7 8 9]
+
+game_on = true
 # While game end
-while turns.positive?
-  board = %w[1 2 3 4 5 6 7 8 9]
+winner = nil
+while game_on
 
   def return_board(board)
     puts "| #{board[0]} | #{board[1]} | #{board[2]} |".colorize(:light_blue)
@@ -33,15 +35,10 @@ while turns.positive?
   return_board(board)
   input1 = gets.chomp
   input1 = input1.to_i
-  # draw
-  if input1 == 8
-    puts "It's a DRAW"
-    return
-  end
+
   board[input1.to_i - 1] = 'X'
   puts "#{player1} has selected the #{input1} position".colorize(:green)
   return_board(board)
-  turns -= 1
   # show the board with selection
 
   puts "#{player2} pick a number from 1 to 9: ".colorize(:green)
@@ -52,15 +49,22 @@ while turns.positive?
     print 'Sorry this move is not valid, '
     p 'please select another place'
   else
-    board[input2.to_i - 1] = '0'
+    board[input2.to_i - 1] = 'O'
     puts "#{player2} has selected the #{input2} position".colorize(:green)
     return_board(board)
-    turns -= 1
   end
 
-  # show the board with selection
-  winner = player1
-  # end
+  if board.count('X') == 3
+    winner ||= player1
+  elsif board.count('O') == 3
+    winner ||= player2
+  elsif board.count('X') == 4 && board.count('O') == 4
+    winner ||= 'draw'
+  end
+
+  game_on = false if winner
+
 end
 
-puts "🎉 #{winner} wins the game 🎉".colorize(:green)
+puts "🎉 #{winner} wins the game 🎉".colorize(:green) unless winner == 'draw'
+puts 'Game is draw' if winner == 'draw'
