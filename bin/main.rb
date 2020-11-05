@@ -28,8 +28,6 @@ while game_on
     puts "\n"
   end
 
-  return_board(board)
-
   puts "#{player1} pick a number from 1 to 9: ".colorize(:green)
   # show the board without selection
   return_board(board)
