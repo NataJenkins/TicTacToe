@@ -32,6 +32,12 @@ while turns.positive?
   # show the board without selection
   return_board(board)
   input1 = gets.chomp
+  input1 = input1.to_i
+  # draw
+  if input1 == 8
+    puts "It's a DRAW"
+    return
+  end
   board[input1.to_i - 1] = 'X'
   puts "#{player1} has selected the #{input1} position".colorize(:green)
   return_board(board)
