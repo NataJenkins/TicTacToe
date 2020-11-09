@@ -1,6 +1,3 @@
-# rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/PerceivedComplexity
-
 require 'colorize'
 
 class Player
@@ -32,14 +29,16 @@ class Grid
     @board[position] = player.token
   end
 
+  def player_position(player)
+    @board.each_with_index
+      .select { |val, _index| val == player.token }
+      .map { |row| row[1] }
+  end
+
   def winner?(player1, player2)
     winning_conditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
-    x_position = @board.each_with_index
-      .select { |val, _index| val == player1.token }
-      .map { |row| row[1] }
-    y_position = @board.each_with_index
-      .select { |val, _index| val == player2.token }
-      .map { |row| row[1] }
+    x_position = player_position(player1)
+    y_position = player_position(player2)
     if winning_conditions.include?(x_position)
       @winner ||= player1
     elsif winning_conditions.include?(y_position)
@@ -56,6 +55,3 @@ class Grid
     true
   end
 end
-
-# rubocop:enable Metrics/CyclomaticComplexity
-# rubocop:enable Metrics/PerceivedComplexity

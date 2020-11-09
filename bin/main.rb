@@ -26,7 +26,7 @@ until grid.winner
   puts "#{player1.name} pick a number from 1 to 9: ".colorize(:green)
 
   puts grid.board_display
-  while true
+  loop do
     input1 = gets.chomp.to_i
     if grid.check_valid?(input1 - 1)
       grid.update_board(player1, input1 - 1)
@@ -44,7 +44,7 @@ until grid.winner
 
   puts "#{player2.name} pick a number from 1 to 9: ".colorize(:green)
   puts grid.board_display
-  while true
+  loop do
     input2 = gets.chomp.to_i
     if grid.check_valid?(input2 - 1)
       grid.update_board(player2, input2 - 1)
