@@ -33,4 +33,8 @@ class Grid
         @win7 = @board[0] == @board[4] && @board[4] == @board[8]
         @win8 = @board[2] == @board[4] && @board[4] == @board[6]
     end
+
+    def draw
+        @board.all?(String)
+    end
 end
