@@ -4,7 +4,7 @@
 
 > A command line game built in ruby
 
-<!-- ![screenshot](./app_screenshot.png) -->
+![screenshot](./app_screenshot.png)
 
 Additional description about the project and its features.
 
@@ -36,10 +36,6 @@ To get a local copy up and running follow these simple example steps.
 ### Usage
 
 - run `./bin/main.rb`
-
-### Run tests
-
-### Deployment
 
 
 
