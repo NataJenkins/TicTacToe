@@ -32,7 +32,7 @@ class Grid
     end
 
     def winning_positions(player1, player2)
-        winning_conditions = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,7],[0,3,6],[1,4,7],[2,5,8]]
+        winning_conditions = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,5,8]]
         x_position = @board.each_with_index
             .select { |val, index| val == player1.token }
             .map { |row| row[1] }
@@ -49,13 +49,13 @@ class Grid
     end
 
     def check_valid?(position)
-        return true if @board[position].include?()
+        return false if @board[position] == 'X' || @board[position] == 'O'
         true
     end
 
 
     def winner?
-        if @board.all?(String) && @winner = nil
+        if @board.all?(String) 
             return "draw"
         else
             return @winner

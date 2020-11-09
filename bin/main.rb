@@ -26,29 +26,40 @@ until grid.winner
   puts "#{player1.name} pick a number from 1 to 9: ".colorize(:green)
  
   puts grid.board
-  input1 = gets.chomp.to_i
-  until grid.check_valid?(input1)
-    puts "#{input1} is already occupied"
+  while true
+    input1 = gets.chomp.to_i
+    if grid.check_valid?(input1-1)
+      grid.update_board(player1, input1-1) 
+      break
+    else
+      puts "#{input1} is already occupied"
+    end
   end
-  grid.update_board(player1, input1-1) 
+
 
   puts "#{player1.name} has selected the #{input1} position".colorize(:green)
   puts grid.board
 
+  grid.winning_positions(player1,player2)
+  break if grid.winner?
+
   puts "#{player2.name} pick a number from 1 to 9: ".colorize(:green)
   puts grid.board
-  input2 = gets.chomp.to_i
-  until grid.check_valid?(input2)
-    puts "#{input2} is already occupied"
+  while true
+    input2 = gets.chomp.to_i
+    if grid.check_valid?(input2-1)
+      grid.update_board(player2, input2-1) 
+      break
+    else
+      puts "#{input2} is already occupied"
+      puts "#{player2.name} pick a number from 1 to 9: ".colorize(:green)
+    end
   end
-  grid.update_board(player2, input2-1)
   puts "#{player2.name} has selected the #{input2} position".colorize(:green)
   puts grid.board
   
   grid.winning_positions(player1,player2)
   break if grid.winner?
-
-
 end
 
 puts "🎉 #{grid.winner.name} wins the game 🎉".colorize(:green) unless grid.winner == 'draw'
