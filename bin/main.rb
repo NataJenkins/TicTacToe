@@ -40,6 +40,7 @@ end
 until grid.winner
   user_turn(player1, grid)
   break if grid.winner?(player1, player2)
+
   puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
   user_turn(player2, grid)
   break if grid.winner?(player1, player2)
