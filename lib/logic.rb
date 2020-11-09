@@ -50,7 +50,9 @@ class Grid
   end
 
   def check_valid?(position)
-    return false if @board[position] == 'X' || @board[position] == 'O'
+    if @board[position] == 'X' || @board[position] == 'O' || position > 9 || position < 1 || !position.is_a?(Integer)
+      return false
+    end
 
     true
   end

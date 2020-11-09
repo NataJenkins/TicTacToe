@@ -4,7 +4,7 @@
 
 > A command line game built in ruby
 
-![screenshot](./app_screenshot.png)
+<!-- ![screenshot](./app_screenshot.png) -->
 
 Additional description about the project and its features.
 
@@ -12,7 +12,6 @@ Additional description about the project and its features.
 
 - Ruby
 - Rubocop
-- Technologies used
 
 ## Live Demo
 
@@ -21,19 +20,22 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- `Ruby v2.7`
+- `bundler` gem installed
+
 ### Setup
 
-### Install
+- Clone the git repo
+- run `bundle install` in main
 
 ### Usage
+
+- run `./bin/main.rb`
 
 ### Run tests
 
@@ -59,7 +61,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/NataJenkins/TicTacToe/issues).
 
 ## Show your support
 
