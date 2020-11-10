@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 require 'artii'
 require 'colorize'
-require './lib/logic'
+require './lib/grid'
+require './lib/player'
 
 title = Artii::Base.new
 
@@ -39,10 +40,11 @@ end
 
 until grid.winner
   user_turn(player1, grid)
-  break if grid.winner?(player1, player2)
-  puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+  break unless grid.winner?(player1, player2).nil?
+  puts "\n"
   user_turn(player2, grid)
-  break if grid.winner?(player1, player2)
+  break unless  grid.winner?(player1, player2).nil?
+  puts "\n"
 end
 
 puts "🎉 #{grid.winner.name} wins the game 🎉".colorize(:green) unless grid.winner == 'draw'

@@ -1,13 +1,5 @@
 require 'colorize'
 
-class Player
-  attr_reader :name, :token
-
-  def initialize(name, token)
-    @name = name
-    @token = token
-  end
-end
 
 class Grid
   attr_reader :board, :winner
@@ -42,7 +34,7 @@ class Grid
     if winning_conditions.include?(x_position)
       @winner ||= player1
     elsif winning_conditions.include?(y_position)
-      @winner ||= player1
+      @winner ||= player2
     elsif @board.all?(String)
       @winner = 'draw'
     end
