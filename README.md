@@ -4,41 +4,33 @@
 
 > A command line game built in ruby
 
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
-
 ## Built With
 
 - Ruby
 - Rubocop
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+-Should have ruby installed 
 
 ### Prerequisites
 
+- `Ruby v2.7`
+- `bundler` gem installed
+
 ### Setup
 
-### Install
+- Clone the git repo
+- run `bundle install` in main
 
 ### Usage
 
-### Run tests
-
-### Deployment
-
+- run `./bin/main.rb`
+- Players should enter their names
+- A grid will be displayed so the first player can pick a cell to start the game
+- Players will select one cell on each turn until the game is over
+- Players cannot select an ocupied cell
+- once a player get 3 marks on a row its the winner
+- If all 9 cells are occupied but none of the players got 3 marks in a row is a draft
 
 
 ## Authors
@@ -59,7 +51,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/NataJenkins/TicTacToe/issues).
 
 ## Show your support
 
