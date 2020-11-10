@@ -4,6 +4,8 @@
 
 > A command line game built in ruby
 
+![screenshot](/assets/app_screenshot.png)
+
 ## Built With
 
 - Ruby
@@ -24,14 +26,24 @@
 
 ### Usage
 
+- Open terminal
+- cd onto program folder
 - run `./bin/main.rb`
 - Players should enter their names
 - A grid will be displayed so the first player can pick a cell to start the game
 - Players will select one cell on each turn until the game is over
 - Players cannot select an ocupied cell
+
+
+### Rules
+- Two players Game
+- The game is played on a grid that's 3 squares by 3 squares
+- Each player has a "X" or "O" Token
 - once a player get 3 marks on a row its the winner
 - If all 9 cells are occupied but none of the players got 3 marks in a row is a draft
 
+### Winning Combinations
+ ![screenshot](/assets/descarga.png)
 
 ## Authors
 
