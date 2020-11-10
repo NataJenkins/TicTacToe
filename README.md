@@ -22,7 +22,7 @@
 ### Setup
 
 - Clone the git repo
-- run `bundle install` in main
+- run `bundle install` in root directory.
 
 ### Usage
 
