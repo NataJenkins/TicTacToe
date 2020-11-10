@@ -1,6 +1,5 @@
 require 'colorize'
 
-
 class Grid
   attr_reader :board, :winner
 
@@ -42,7 +41,8 @@ class Grid
   end
 
   def check_valid?(position)
-    if @board[position] == 'X' || @board[position] == 'O' || position > 9 || position < 0 || !position.is_a?(Integer)
+    if @board[position] == 'X' || @board[position] == 'O' ||
+       position > 9 || position.negative? || !position.is_a?(Integer)
       return false
     end
 
