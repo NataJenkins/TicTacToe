@@ -40,13 +40,11 @@ end
 
 until grid.winner
   user_turn(player1, grid)
-  p grid.winner?(player1, player2)
-  break unless grid.winner?(player1, player2).nil?
+  break if grid.winner?(player1, player2)
 
   puts "\n"
   user_turn(player2, grid)
-  p grid.winner?(player1, player2)
-  break unless grid.winner?(player1, player2).nil?
+  break if grid.winner?(player1, player2)
 
   puts "\n"
 end

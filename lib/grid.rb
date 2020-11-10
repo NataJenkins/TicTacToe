@@ -30,12 +30,16 @@ class Grid
     winning_conditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
     x_position = player_position(player1)
     y_position = player_position(player2)
-    if winning_conditions.include?(x_position)
-      @winner ||= player1
-    elsif winning_conditions.include?(y_position)
-      @winner ||= player2
-    elsif @board.all?(String)
-      @winner = 'draw'
+    winning_conditions.each do |condition|
+      if condition & x_position == condition
+        @winner ||= player1
+        break
+      elsif condition & y_position == condition
+        @winner ||= player2
+        break
+      elsif @board.all?(String)
+        @winner = 'draw'
+      end
     end
     @winner
   end
