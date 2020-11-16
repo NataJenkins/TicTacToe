@@ -17,7 +17,7 @@ class Grid
   end
 
   def update_board(player, position)
-   @board[position] = player.token
+    @board[position] = player.token
   end
 
   def player_position(player)

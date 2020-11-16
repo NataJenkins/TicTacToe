@@ -41,16 +41,16 @@ describe Grid do
       expect { grid.winner?(player1, player2) }
     end
   end
-   describe'#update_board' do
-     it 'board is getting the player token'do
-     grid = Grid.new
-     expect {grid.update_position("one", 5).to eq("X")}
-   end
-   end
-  describe '#player_position'do
-  it 'returns an instance of an array' do
-  grid = Grid.new
-  expect {grid.player_position(player1).to an_instance_of(Array)}
+  describe '#update_board' do
+    it 'board is getting the player token' do
+      grid = Grid.new
+      expect { grid.update_position('one', 5).to eq('X') }
+    end
   end
-end
+  describe '#player_position' do
+    it 'returns an instance of an array' do
+      grid = Grid.new
+      expect { grid.player_position(player1).to an_instance_of(Array) }
+    end
+  end
 end
