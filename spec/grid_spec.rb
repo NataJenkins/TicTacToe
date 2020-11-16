@@ -17,6 +17,10 @@ describe Grid do
       input = grid.check_valid?(-1)
       expect(input).to eq(false)
     end
+    it 'Check input is not a string' do
+      grid = Grid.new
+      expect{grid.check_valid?("a")}.to raise_error(TypeError)
+    end
   end
   describe 'initialize' do
     it 'check if there is an istance of Grid' do
@@ -32,6 +36,10 @@ describe Grid do
       grid = Grid.new
       expect{grid.winner?(player1, player2, player3)}.to raise_error(ArgumentError)
   end
+  it 'raises an argument error ' do
+    grid = Grid.new
+    expect{grid.winner?(player1, player2)}
+end
 end
 end
 
