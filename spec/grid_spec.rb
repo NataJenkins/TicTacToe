@@ -24,12 +24,14 @@ describe Grid do
       expect(grid).to an_instance_of(Grid)
     end
   end
+  let(:player1) { Player.new('player1', 'O') }
+  let(:player2) { Player.new('player2', 'X') }
+  let(:player3) { Player.new('player3', '/') }
   describe '#winner?' do
-    let(:player1) { Player.new('player1', 'O') }
-    let(:player2) { Player.new('player2', 'X') }
-    it 'checks if winner is assigned player variable ' do
+    it 'raises an argument error ' do
       grid = Grid.new
-      expect(grid.winner?(player1,player2).to eql?(true))
+      expect{grid.winner?(player1, player2, player3)}.to raise_error(ArgumentError)
   end
 end
 end
+
