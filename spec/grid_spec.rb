@@ -24,10 +24,12 @@ describe Grid do
       expect(grid).to an_instance_of(Grid)
     end
   end
-  #   describe "#marks" do
-  #     it "check marks are in the right position"do
-  #     grid = Grid.new
-  #     expect(grid.assigning_marks(1)).to
-  #     end
-  #   end
+  describe '#winner?' do
+    let(:player1) { Player.new('player1', 'O') }
+    let(:player2) { Player.new('player2', 'X') }
+    it 'checks if winner is assigned player variable ' do
+      grid = Grid.new
+      expect(grid.winner?(player1,player2).to eql?(true))
+  end
+end
 end
