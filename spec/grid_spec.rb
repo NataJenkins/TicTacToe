@@ -19,7 +19,7 @@ describe Grid do
     end
     it 'Check input is not a string' do
       grid = Grid.new
-      expect{grid.check_valid?("a")}.to raise_error(TypeError)
+      expect { grid.check_valid?('a') }.to raise_error(TypeError)
     end
   end
   describe 'initialize' do
@@ -34,12 +34,11 @@ describe Grid do
   describe '#winner?' do
     it 'raises an argument error ' do
       grid = Grid.new
-      expect{grid.winner?(player1, player2, player3)}.to raise_error(ArgumentError)
+      expect { grid.winner?(player1, player2, player3) }.to raise_error(ArgumentError)
+    end
+    it 'raises an argument error ' do
+      grid = Grid.new
+      expect { grid.winner?(player1, player2) }
+    end
   end
-  it 'raises an argument error ' do
-    grid = Grid.new
-    expect{grid.winner?(player1, player2)}
 end
-end
-end
-
