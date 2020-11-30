@@ -45,6 +45,12 @@
 ### Winning Combinations
  ![screenshot](/assets/descarga.png)
 
+# Testing
+-Open the console
+-cd to the Tic-Tac-Toe project
+-Run gem install rspec
+-Run rspec
+
 ## Authors
 
 👤 **Natalia Macias** 
